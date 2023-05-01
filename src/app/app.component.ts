@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { AddCarDialogComponent } from './components/add-car-dialog/add-car-dialog.component';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +9,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'car-inventory';
+
+  constructor(private _dialogRef: MatDialog){}
+
+  openDialog() {
+    this._dialogRef.open(AddCarDialogComponent)
+  }
 }
